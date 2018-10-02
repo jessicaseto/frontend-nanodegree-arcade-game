@@ -1,16 +1,14 @@
 // Enemies our player must avoid
 class Enemy {
-    constructor (sprite) {
+    constructor(sprite) {
         // The image/sprite for our enemies, this uses
         // a helper we've provided to easily load images
-        this.sprite = 'images/enemy-bug.png';
+        this.sprite = 'images/char-cat-girl.png';
 
         // Location information
-        this.x = 0;
-        this.y = getRndInteger(2, 4) * 83;
-
-        // Speed
-        this.speed = getRndInteger(1, 10);
+        // Start in the middle column, first row
+        this.x = 2 * 101;
+        this.y = 0;
     }
 
     // Update the enemy's position, required method for game
@@ -44,6 +42,43 @@ function getRndInteger(min, max) {
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
+class Player {
+    constructor(sprite) {
+        // The image/sprite for our player, this uses
+        // a helper we've provided to easily load images
+        this.sprite = 'images/enemy-bug.png';
+
+        // Location information
+        this.x = 0;
+        this.y = getRndInteger(2, 4) * 83;
+
+        // Speed
+        this.speed = getRndInteger(1, 10);
+    }
+
+    update(dt) {
+        // Update the player's x and y location
+        this.x += (this.dx * dt);
+        this.y += (this.dy * dt);
+    }
+
+    handleInput(key) {
+        // Set dx and dy to 0 initially
+        this.dx = 0;
+        this.dy = 0;
+
+        // Check for left, up, right, or down
+        if (key === 'left' && this.x > 0) {
+            this.dx = -1;
+        } else if (key === 'up' && this.y < 415) {
+            this.dy = 1;
+        } else if (key === 'right' && this.x < 505) {
+            this.dx = 1;
+        } else if (key === 'down' && this.y > 0) {
+            this.dy = -1;
+        }
+    }
+}
 
 
 // Now instantiate your objects.
