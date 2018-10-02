@@ -48,7 +48,7 @@ class Player {
     constructor(sprite) {
         // The image/sprite for our player, this uses
         // a helper we've provided to easily load images
-        this.sprite = 'images/char-boy.png';
+        this.sprite = 'images/char-cat-girl.png';
 
         // Location information
         // Start in the middle column, first row
