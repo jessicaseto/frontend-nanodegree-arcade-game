@@ -48,7 +48,7 @@ class Player {
     constructor(sprite) {
         // The image/sprite for our player, this uses
         // a helper we've provided to easily load images
-        this.sprite = 'images/char-cat-girl.png';
+        this.sprite = 'images/char-boy.png';
 
         // Location information
         // Start in the middle column, first row
@@ -78,14 +78,24 @@ class Player {
             this.dy = -1;
         }
     }
+
+    // Draw the player on the screen, required method for game
+    render() {
+        ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+    }
 }
 
 
 // Now instantiate your objects.
+// Place the player object in a variable called player
+const player = new Player;
 
 // Place all enemy objects in an array called allEnemies
-// Place the player object in a variable called player
-
+const allEnemies = [];
+const enemy1 = new Enemy;
+const enemy2 = new Enemy;
+const enemy3 = new Enemy;
+allEnemies.push(enemy1, enemy2, enemy3);
 
 
 // This listens for key presses and sends the keys to your
