@@ -60,25 +60,25 @@ class Player {
         this.dy = 0;
     }
 
-    update(dt) {
+    update() {
         // Update the player's x and y location
-        this.x += (this.dx * dt);
-        this.y += (this.dy * dt);
+        this.x += (this.dx * 101);
+        this.y += (this.dy * 83);
+
+        // Reset dx and dy
+        this.dx = 0;
+        this.dy = 0;
     }
 
     handleInput(key) {
-        // Set dx and dy to 0 initially
-        this.dx = 0;
-        this.dy = 0;
-
         // Check for left, up, right, or down
         if (key === 'left' && this.x > 0) {
             this.dx = -1;
         } else if (key === 'up' && this.y > 0) {
             this.dy = -1;
-        } else if (key === 'right' && this.x < 505) {
+        } else if (key === 'right' && this.x < 404) {
             this.dx = 1;
-        } else if (key === 'down' && this.y < 606) {
+        } else if (key === 'down' && this.y < 400) {
             this.dy = 1;
         }
     }
