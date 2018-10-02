@@ -22,9 +22,9 @@ class Enemy {
         this.x += (this.speed * dt);
 
         // Handle collision with a player
-        if (this.x === player.x && this.y === player.y) {
+        if ((this.x - Math.abs(player.x) < 1) && (this.y - player.y === 21)) {
             player.x = 2 * 101;
-            player.y = 400;
+            player.y = 374;
         }
     };
 
@@ -53,7 +53,7 @@ class Player {
         // Location information
         // Start in the middle column, first row
         this.x = 2 * 101;
-        this.y = 400;
+        this.y = 374;
 
         // Movement information
         this.dx = 0;
@@ -78,7 +78,7 @@ class Player {
             this.dy = -1;
         } else if (key === 'right' && this.x < 404) {
             this.dx = 1;
-        } else if (key === 'down' && this.y < 400) {
+        } else if (key === 'down' && this.y < 374) {
             this.dy = 1;
         }
     }
