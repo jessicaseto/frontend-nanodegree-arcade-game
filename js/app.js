@@ -10,7 +10,7 @@ class Enemy {
         this.y = getRndInteger(2, 4) * 83;
 
         // Speed
-        this.speed = 1;
+        this.speed = getRndInteger(1, 10);
     }
 
     // Update the enemy's position, required method for game
