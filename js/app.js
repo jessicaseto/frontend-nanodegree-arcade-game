@@ -6,7 +6,8 @@ class Enemy {
         this.sprite = 'images/enemy-bug.png';
 
         // Location information
-        this.x = 0;
+        this.x = getRndInteger(1, 3) * -101;
+        console.log(this.x);
         this.y = getRndInteger(1, 3) * 83 - 20;
 
         // Speed
