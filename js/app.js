@@ -24,7 +24,7 @@ class Enemy {
         // Handle collision with a player
         if (this.x === player.x && this.y === player.y) {
             player.x = 2 * 101;
-            player.y = 0;
+            player.y = 400;
         }
     };
 
@@ -53,13 +53,13 @@ class Player {
         // Location information
         // Start in the middle column, first row
         this.x = 2 * 101;
-        this.y = 0;
+        this.y = 400;
     }
 
     update(dt) {
         // Update the player's x and y location
-        this.x += (this.dx * dt);
-        this.y += (this.dy * dt);
+        //this.x += (this.dx * dt);
+        //this.y += (this.dy * dt);
     }
 
     handleInput(key) {
