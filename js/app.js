@@ -23,8 +23,7 @@ class Enemy {
 
         // Handle collision with a player
         if ((this.x - Math.abs(player.x) < 1) && (this.y - player.y === 21)) {
-            player.x = 2 * 101;
-            player.y = 374;
+            player.reset();
         }
     };
 
@@ -65,6 +64,11 @@ class Player {
         this.x += (this.dx * 101);
         this.y += (this.dy * 83);
 
+        // If player has reached the water, call reset
+        if (this.y < 0) {
+            player.reset();
+        }
+
         // Reset dx and dy
         this.dx = 0;
         this.dy = 0;
@@ -81,6 +85,12 @@ class Player {
         } else if (key === 'down' && this.y < 374) {
             this.dy = 1;
         }
+    }
+
+    // Reset function to reset the location of the player
+    reset() {
+        this.x = 2 * 101;
+        this.y = 374;
     }
 
     // Draw the player on the screen, required method for game
