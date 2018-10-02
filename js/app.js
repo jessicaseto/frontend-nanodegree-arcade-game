@@ -54,12 +54,16 @@ class Player {
         // Start in the middle column, first row
         this.x = 2 * 101;
         this.y = 400;
+
+        // Movement information
+        this.dx = 0;
+        this.dy = 0;
     }
 
     update(dt) {
         // Update the player's x and y location
-        //this.x += (this.dx * dt);
-        //this.y += (this.dy * dt);
+        this.x += (this.dx * dt);
+        this.y += (this.dy * dt);
     }
 
     handleInput(key) {
@@ -70,12 +74,12 @@ class Player {
         // Check for left, up, right, or down
         if (key === 'left' && this.x > 0) {
             this.dx = -1;
-        } else if (key === 'up' && this.y < 415) {
-            this.dy = 1;
+        } else if (key === 'up' && this.y > 0) {
+            this.dy = -1;
         } else if (key === 'right' && this.x < 505) {
             this.dx = 1;
-        } else if (key === 'down' && this.y > 0) {
-            this.dy = -1;
+        } else if (key === 'down' && this.y < 606) {
+            this.dy = 1;
         }
     }
 
