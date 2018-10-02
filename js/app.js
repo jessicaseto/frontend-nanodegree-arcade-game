@@ -7,7 +7,7 @@ class Enemy {
 
         // Location information
         this.x = 0;
-        this.y = getRndInteger(2, 4) * 83;
+        this.y = getRndInteger(1, 3) * 83 - 20;
 
         // Speed
         this.speed = getRndInteger(1, 10);
