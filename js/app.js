@@ -3,12 +3,14 @@ class Enemy {
     constructor(sprite) {
         // The image/sprite for our enemies, this uses
         // a helper we've provided to easily load images
-        this.sprite = 'images/char-cat-girl.png';
+        this.sprite = 'images/enemy-bug.png';
 
         // Location information
-        // Start in the middle column, first row
-        this.x = 2 * 101;
-        this.y = 0;
+        this.x = 0;
+        this.y = getRndInteger(2, 4) * 83;
+
+        // Speed
+        this.speed = getRndInteger(1, 10);
     }
 
     // Update the enemy's position, required method for game
@@ -46,14 +48,12 @@ class Player {
     constructor(sprite) {
         // The image/sprite for our player, this uses
         // a helper we've provided to easily load images
-        this.sprite = 'images/enemy-bug.png';
+        this.sprite = 'images/char-cat-girl.png';
 
         // Location information
-        this.x = 0;
-        this.y = getRndInteger(2, 4) * 83;
-
-        // Speed
-        this.speed = getRndInteger(1, 10);
+        // Start in the middle column, first row
+        this.x = 2 * 101;
+        this.y = 0;
     }
 
     update(dt) {
