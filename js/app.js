@@ -20,6 +20,12 @@ class Enemy {
         // which will ensure the game runs at the same speed for
         // all computers.
         this.x += (this.speed * dt);
+
+        // Handle collision with a player
+        if (this.x === player.x && this.y === player.y) {
+            player.x = 2 * 101;
+            player.y = 0;
+        }
     };
 
     // Draw the enemy on the screen, required method for game
