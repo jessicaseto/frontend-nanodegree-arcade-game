@@ -25,6 +25,7 @@ class Enemy {
         if ((Math.abs(this.x - player.x) < 75) && (this.y - player.y === 10)) {
             player.reset();
         }
+        console.log(allEnemies);
     };
 
     // Draw the enemy on the screen, required method for game
@@ -110,6 +111,12 @@ const enemy1 = new Enemy;
 const enemy2 = new Enemy;
 const enemy3 = new Enemy;
 allEnemies.push(enemy1, enemy2, enemy3);
+
+// Create a new enemy every ~2 seconds
+setInterval(function() {
+    const enemy = new Enemy;
+    allEnemies.push(enemy);
+}, 2000);
 
 
 // This listens for key presses and sends the keys to your
