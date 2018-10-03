@@ -7,7 +7,7 @@ class Enemy {
     constructor(sprite) {
         // The image/sprite for our enemies, this uses
         // a helper we've provided to easily load images
-        this.sprite = 'images/enemy-bug.png';
+        this.sprite = sprite;
 
         // Location information
         this.x = getRndInteger(1, 3) * -101;
@@ -153,3 +153,17 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
+
+// Bring up start modal
+function start() {
+    document.querySelector('.start-modal').style.display = 'block';
+
+    // Check if an avatar was clicked
+    document.addEventListener('click', function(event) {
+        if(event.target.classList.contains('char-boy')) {
+
+        } else if (event.target.classList.contains('char-girl')) {
+
+        }
+    });
+}
