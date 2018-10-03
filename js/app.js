@@ -7,7 +7,6 @@ class Enemy {
 
         // Location information
         this.x = getRndInteger(1, 3) * -101;
-        console.log(this.x);
         this.y = getRndInteger(1, 3) * 83 - 20;
 
         // Speed
@@ -23,7 +22,7 @@ class Enemy {
         this.x += (this.speed * dt);
 
         // Handle collision with a player
-        if ((this.x - Math.abs(player.x) < 1) && (this.y - player.y === 10)) {
+        if ((Math.abs(this.x - player.x) < 100) && (this.y - player.y === 10)) {
             player.reset();
         }
     };
