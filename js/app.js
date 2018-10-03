@@ -28,6 +28,8 @@ class Enemy {
         // Handle collision with a player
         if ((Math.abs(this.x - player.x) < 75) && (this.y - player.y === 10)) {
             player.reset();
+            player.points = 0;
+            points.innerHTML = player.points;
         }
     };
 
