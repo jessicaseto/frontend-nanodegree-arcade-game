@@ -121,14 +121,14 @@ const enemy2 = new Enemy;
 const enemy3 = new Enemy;
 allEnemies.push(enemy1, enemy2, enemy3);
 
-// Create a new enemy every ~2 seconds
+// Create a new enemy every ~1.5 seconds
 setInterval(function() {
     // Code in setInterval only runs if the page has focus
     if( document.hasFocus() ) {
         const enemy = new Enemy;
         allEnemies.push(enemy);
     }
-}, 2000);
+}, 1500);
 
 
 // This listens for key presses and sends the keys to your
