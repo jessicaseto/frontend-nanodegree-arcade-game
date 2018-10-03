@@ -28,6 +28,15 @@ class Enemy {
         console.log(allEnemies);
     };
 
+    // Method to check if the enemy has cleared the screen.
+    // If so, remove from array
+    // Parameter: index, the index of the enemy in the allEnemies array
+    checkIfCleared(index) {
+        if (this.x > 505) {
+            allEnemies.splice(index, 1);
+        }
+    }
+
     // Draw the enemy on the screen, required method for game
     render() {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
