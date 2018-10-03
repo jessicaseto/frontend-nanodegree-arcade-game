@@ -86,8 +86,7 @@ class Player {
         if (this.y < 0) {
             this.points ++;
             points.innerHTML = this.points;
-            console.log(document.querySelector('.points'));
-            player.reset();
+            this.reset();
         }
 
         // Reset dx and dy
