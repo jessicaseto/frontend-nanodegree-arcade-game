@@ -22,7 +22,7 @@ class Enemy {
         this.x += (this.speed * dt);
 
         // Handle collision with a player
-        if ((Math.abs(this.x - player.x) < 100) && (this.y - player.y === 10)) {
+        if ((Math.abs(this.x - player.x) < 75) && (this.y - player.y === 10)) {
             player.reset();
         }
     };
