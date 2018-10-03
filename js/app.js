@@ -123,8 +123,11 @@ allEnemies.push(enemy1, enemy2, enemy3);
 
 // Create a new enemy every ~2 seconds
 setInterval(function() {
-    const enemy = new Enemy;
-    allEnemies.push(enemy);
+    // Code in setInterval only runs if the page has focus
+    if( document.hasFocus() ) {
+        const enemy = new Enemy;
+        allEnemies.push(enemy);
+    }
 }, 2000);
 
 
