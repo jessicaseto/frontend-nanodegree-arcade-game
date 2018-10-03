@@ -1,14 +1,11 @@
 body {
     text-align: center;
     width: 100vw;
+    font-family: 'Arial', sans-serif;
 }
 
 .game-title {
     font-family: 'Gloria Hallelujah', cursive;
     text-transform: uppercase;
     text-align: center;
-}
-
-.points-text {
-    font-family: 'Arial', sans-serif;
 }

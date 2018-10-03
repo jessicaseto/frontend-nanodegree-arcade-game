@@ -1,3 +1,7 @@
+// Global counter for points
+const points = document.querySelector('.points');
+points.innerHTML = 0;
+
 // Enemies our player must avoid
 class Enemy {
     constructor(sprite) {
@@ -25,7 +29,6 @@ class Enemy {
         if ((Math.abs(this.x - player.x) < 75) && (this.y - player.y === 10)) {
             player.reset();
         }
-        console.log(allEnemies);
     };
 
     // Method to check if the enemy has cleared the screen.
@@ -67,6 +70,9 @@ class Player {
         // Movement information
         this.dx = 0;
         this.dy = 0;
+
+        // Point count
+        this.points = 0;
     }
 
     update() {
@@ -76,6 +82,9 @@ class Player {
 
         // If player has reached the water, call reset
         if (this.y < 0) {
+            this.points ++;
+            points.innerHTML = this.points;
+            console.log(document.querySelector('.points'));
             player.reset();
         }
 
