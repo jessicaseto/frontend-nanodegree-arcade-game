@@ -200,7 +200,6 @@ class Player {
     }
 }
 
-
 // Now instantiate your objects.
 
 // Place player in variable called player
