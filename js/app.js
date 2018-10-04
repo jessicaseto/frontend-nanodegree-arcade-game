@@ -2,6 +2,9 @@
 const points = document.querySelector('.points');
 points.innerHTML = 0;
 
+// Global for running status
+let running = false;
+
 // Function to set up game
 function gameSetUp (sprite) {
     // Hide the start modal
@@ -10,11 +13,17 @@ function gameSetUp (sprite) {
     // Save the avatar choice
     player = new Player(sprite);
 
+    // Create some enemies to start
+    allEnemies.push(new Enemy, new Enemy, new Enemy);
+
     // Start the resources
     resources();
 
     // Start the game engine
     Engine(window);
+
+    // Set running to true
+    running = true;
 
     // This listens for key presses and sends the keys to your
     // Player.handleInput() method. You don't need to modify this.
@@ -179,15 +188,12 @@ let player;
 
 // Place all enemy objects in an array called allEnemies
 const allEnemies = [];
-const enemy1 = new Enemy;
-const enemy2 = new Enemy;
-const enemy3 = new Enemy;
-allEnemies.push(enemy1, enemy2, enemy3);
 
 // Create a new enemy every ~1.5 seconds
 setInterval(function() {
     // Code in setInterval only runs if the page has focus
-    if( document.hasFocus() ) {
+    // and is running
+    if( document.hasFocus() && running ) {
         const enemy = new Enemy;
         allEnemies.push(enemy);
     }
