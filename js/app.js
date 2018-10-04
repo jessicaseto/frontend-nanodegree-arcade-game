@@ -218,6 +218,12 @@ setInterval(function() {
             allEnemies.push(new Enemy, new Enemy);
         } else if (points > 7) {
             allEnemies.push(new Enemy, new Enemy, new Enemy);
+        } else if (points > 10) {
+            allEnemies.push(new Enemy, new Enemy, new Enemy, new Enemy);
+        } else if (points > 13) {
+            allEnemies.push(new Enemy, new Enemy, new Enemy, new Enemy, new Enemy);
+        } else if (points > 18) {
+            allEnemies.push(new Enemy, new Enemy, new Enemy, new Enemy, new Enemy, new Enemy, new Enemy);
         } else {
             allEnemies.push(new Enemy);
         }
