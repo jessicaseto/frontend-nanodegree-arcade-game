@@ -30,6 +30,14 @@ var Engine = function(global) {
     canvas.height = 606;
     doc.body.appendChild(canvas);
 
+    // Add event listener for window visibility change
+    // to handle updates to dt when tab changes
+    document.addEventListener('visibilitychange', function () {
+        if (document.visibilityState === 'visible') {
+          lastTime = Date.now();
+        }
+    });
+
     /* This function serves as the kickoff point for the game loop itself
      * and handles properly calling the update and render methods.
      */

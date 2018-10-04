@@ -1,5 +1,16 @@
 "use strict";
 
+// Check window focus
+var windowFocus = true;
+
+window.onfocus = function () {
+    windowFocus = true;
+
+}
+window.onblur = function () {
+    windowFocus = false;
+}
+
 // Global counter for points
 const points = document.querySelector('.points');
 points.innerHTML = 0;
@@ -195,7 +206,7 @@ const allEnemies = [];
 setInterval(function() {
     // Code in setInterval only runs if the page has focus
     // and is running
-    if(document.hasFocus() && running) {
+    if (document.hasFocus() && running && windowFocus) {
         const enemy = new Enemy;
         allEnemies.push(enemy);
     }
