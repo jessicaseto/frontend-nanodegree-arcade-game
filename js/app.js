@@ -110,6 +110,11 @@ class Enemy {
             player.points = 0;
             points.innerHTML = player.points;
             speedMultiplier = 3;
+
+            // Create 2 new enemies upon losing if allEnemies length < 2
+            if(allEnemies.length < 2) {
+                allEnemies.push(new Enemy, new Enemy);
+            }
         }
     };
 
@@ -190,6 +195,7 @@ class Player {
 
     // Reset function to reset the location of the player
     reset() {
+        // Return player to start location
         this.x = 2 * 101;
         this.y = 385;
     }
