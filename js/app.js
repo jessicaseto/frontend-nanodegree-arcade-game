@@ -193,7 +193,7 @@ const allEnemies = [];
 setInterval(function() {
     // Code in setInterval only runs if the page has focus
     // and is running
-    if( document.hasFocus() && running ) {
+    if(document.hasFocus() && running) {
         const enemy = new Enemy;
         allEnemies.push(enemy);
     }
