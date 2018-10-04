@@ -16,10 +16,11 @@ body {
     right: 0;
     bottom: 0;
     left: 0;
+    background: #ffffff;
     /*background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
 }
 
 .start-modal .char-boy,
-.start-modal .char-girl {
+.start-modal .char-cat-girl {
     display: inline-block;
 }

@@ -185,8 +185,3 @@ var Engine = function(global) {
      */
     global.ctx = ctx;
 }
-
-// Invoke the game engine if character was selected from start modal
-if (start) {
-    Engine(this);
-}

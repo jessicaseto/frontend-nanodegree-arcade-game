@@ -2,12 +2,55 @@
 const points = document.querySelector('.points');
 points.innerHTML = 0;
 
+// Function to set up game
+function gameSetUp (sprite) {
+    // Hide the start modal
+    document.querySelector('.start-modal').style.display = 'none';
+
+    // Save the avatar choice
+    player = new Player(sprite);
+
+    // Start the resources
+    resources();
+
+    // Start the game engine
+    Engine(window);
+
+    // This listens for key presses and sends the keys to your
+    // Player.handleInput() method. You don't need to modify this.
+    document.addEventListener('keyup', function(e) {
+        var allowedKeys = {
+            37: 'left',
+            38: 'up',
+            39: 'right',
+            40: 'down'
+        };
+
+        player.handleInput(allowedKeys[e.keyCode]);
+    });
+}
+
+// Function to start the game
+(function start() {
+    // Bring up start modal
+    document.querySelector('.start-modal').style.display = 'block';
+
+    // Check if an avatar was clicked
+    document.addEventListener('click', function(event) {
+        if(event.target.classList.contains('char-boy')) {
+            gameSetUp('images/char-boy.png');
+        } else if (event.target.classList.contains('char-cat-girl')) {
+            gameSetUp('images/char-cat-girl.png');
+        }
+    });
+})();
+
 // Enemies our player must avoid
 class Enemy {
     constructor(sprite) {
         // The image/sprite for our enemies, this uses
         // a helper we've provided to easily load images
-        this.sprite = sprite;
+        this.sprite = 'images/enemy-bug.png';
 
         // Location information
         this.x = getRndInteger(1, 3) * -101;
@@ -62,7 +105,7 @@ class Player {
     constructor(sprite) {
         // The image/sprite for our player, this uses
         // a helper we've provided to easily load images
-        this.sprite = 'images/char-cat-girl.png';
+        this.sprite = sprite;
 
         // Location information
         // Start in the middle column, first row
@@ -121,8 +164,10 @@ class Player {
 
 
 // Now instantiate your objects.
-// Place the player object in a variable called player
-const player = new Player;
+
+// Place player in variable called player
+// Avatar to be assigned when clicked on start modal
+let player;
 
 // Place all enemy objects in an array called allEnemies
 const allEnemies = [];
@@ -139,31 +184,3 @@ setInterval(function() {
         allEnemies.push(enemy);
     }
 }, 1500);
-
-
-// This listens for key presses and sends the keys to your
-// Player.handleInput() method. You don't need to modify this.
-document.addEventListener('keyup', function(e) {
-    var allowedKeys = {
-        37: 'left',
-        38: 'up',
-        39: 'right',
-        40: 'down'
-    };
-
-    player.handleInput(allowedKeys[e.keyCode]);
-});
-
-// Bring up start modal
-function start() {
-    document.querySelector('.start-modal').style.display = 'block';
-
-    // Check if an avatar was clicked
-    document.addEventListener('click', function(event) {
-        if(event.target.classList.contains('char-boy')) {
-
-        } else if (event.target.classList.contains('char-girl')) {
-
-        }
-    });
-}
