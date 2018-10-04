@@ -1,3 +1,5 @@
+"use strict";
+
 // Global counter for points
 const points = document.querySelector('.points');
 points.innerHTML = 0;
