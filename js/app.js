@@ -18,6 +18,9 @@ points.innerHTML = 0;
 // Global for running status
 let running = false;
 
+// Global for speed multiplier
+let speedMultiplier = 3;
+
 // Function to set up game
 function gameSetUp (sprite) {
     // Hide the start modal
@@ -27,7 +30,7 @@ function gameSetUp (sprite) {
     player = new Player(sprite);
 
     // Create some enemies to start
-    allEnemies.push(new Enemy, new Enemy, new Enemy);
+    allEnemies.push(new Enemy, new Enemy);
 
     // Start the resources
     resources();
@@ -87,8 +90,11 @@ class Enemy {
         this.y = getRndInteger(1, 3) * 83 - 20;
 
         // Speed
-        this.speed = getRndInteger(3,5) * 40;
+        this.speed = getRndInteger(3,5) * 10 * speedMultiplier;
     }
+
+    // Increase enemy speed
+
 
     // Update the enemy's position, required method for game
     // Parameter: dt, a time delta between ticks
@@ -103,6 +109,7 @@ class Enemy {
             player.reset();
             player.points = 0;
             points.innerHTML = player.points;
+            speedMultiplier = 3;
         }
     };
 
@@ -160,6 +167,7 @@ class Player {
             this.points ++;
             points.innerHTML = this.points;
             this.reset();
+            speedMultiplier++;
         }
 
         // Reset dx and dy
@@ -202,12 +210,17 @@ let player;
 // Place all enemy objects in an array called allEnemies
 const allEnemies = [];
 
-// Create a new enemy every ~1.5 seconds
+// Create a new enemy every ~1.2 seconds
 setInterval(function() {
     // Code in setInterval only runs if the page has focus
     // and is running
     if (document.hasFocus() && running && windowFocus) {
-        const enemy = new Enemy;
-        allEnemies.push(enemy);
+        if (points > 4) {
+            allEnemies.push(new Enemy, new Enemy);
+        } else if (points > 7) {
+            allEnemies.push(new Enemy, new Enemy, new Enemy);
+        } else {
+            allEnemies.push(new Enemy);
+        }
     }
-}, 1500);
+}, 1200);
