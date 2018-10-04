@@ -41,6 +41,14 @@ function gameSetUp (sprite) {
             gameSetUp('images/char-boy.png');
         } else if (event.target.classList.contains('char-cat-girl')) {
             gameSetUp('images/char-cat-girl.png');
+        } else if (event.target.classList.contains('enemy-bug')) {
+            gameSetUp('images/enemy-bug.png');
+        } else if (event.target.classList.contains('char-horn-girl')) {
+            gameSetUp('images/char-horn-girl.png');
+        } else if (event.target.classList.contains('char-pink-girl')) {
+            gameSetUp('images/char-pink-girl.png');
+        } else if (event.target.classList.contains('char-princess-girl')) {
+            gameSetUp('images/char-princess-girl.png');
         }
     });
 })();

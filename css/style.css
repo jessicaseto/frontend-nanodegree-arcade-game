@@ -21,6 +21,10 @@ body {
 }
 
 .start-modal .char-boy,
-.start-modal .char-cat-girl {
+.start-modal .char-cat-girl,
+.start-modal .enemy-bug,
+.start-modal .char-horn-girl,
+.start-modal .char-pink-girl,
+.start-modal .char-princess-girl {
     display: inline-block;
 }
