@@ -1,6 +1,12 @@
 frontend-nanodegree-arcade-game
 ===============================
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+# How to Play
+1. Download the game folder.
+2. Unzip the game folder.
+3. Double-click on **index.html**.
+4. Select an avatar by clicking on the avatar of your choice!
+5. Navigate from the grass to the water by using the arrow keys on the keyboard. Be sure to dodge the cockroaches on the road!
+6. Once you reach the water, your position will be reset to the initial location and the point counter will increase by 1. If you collide with a cockroach, the game will be reset and the point count will be reset to 0.
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+Have fun crossing the road!
